@@ -22,7 +22,7 @@ def activation_checkpointing(
         offload_to_cpu (bool, optional): Whether to offload the activations to CPU. Defaults to False.
         accelerator (Accelerator, optional): The Accelerate library accelerator. Defaults to None.
     """
-    print_main(f"Using activation checkpointing")
+    print_main("Using activation checkpointing")
     check_fn = lambda submodule: isinstance(submodule, ParallelTransformerBlock)
     non_reentrant_wrapper = partial(
         checkpoint_wrapper,

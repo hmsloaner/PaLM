@@ -82,7 +82,7 @@ def activation_checkpointing(
         accelerator (Accelerator, optional): The Accelerate library accelerator. Defaults to None.
     """
     if accelerator is not None:
-        accelerator.print(f"Using activation checkpointing")
+        accelerator.print("Using activation checkpointing")
     check_fn = lambda submodule: isinstance(submodule, ParallelTransformerBlock)
     non_reentrant_wrapper = partial(
         checkpoint_wrapper,
